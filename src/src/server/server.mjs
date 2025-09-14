@@ -17,6 +17,11 @@ class Server {
       const [rows] = await pool.query("SELECT NOW() AS now");
       res.json(rows);
     });
+
+    const PORT = 4001 || process.env.PORT;
+    this.app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+    });
   }
 
   middlewares() {
