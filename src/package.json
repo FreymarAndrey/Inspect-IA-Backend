@@ -1,6 +1,7 @@
 {
   "name": "inspectia-web-backend",
   "version": "1.0.0",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "dev": "node --watch --env-file local.env src/index.mjs",
