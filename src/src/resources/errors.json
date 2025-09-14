@@ -1,0 +1,17 @@
+{
+  "AM1001": "el campo correo es requerido.",
+  "AM1002": "el campo nombres es requerido.",
+  "AM1003": "el campo apellidos es requerido.",
+  "AM1004": "el campo teléfono es requerido.",
+  "AM1005": "el campo empresa es requerido.",
+  "AM1006": "el campo contraseña es requerido.",
+  "AM1101": "el correo ya existe.",
+  "US2000": "ocurrio un error al traer los usuarios",
+  "US2001": "ocurrio un error creando el usuario",
+  "US2002": "ocurrio un error al obtener el usuario",
+  "US2003": "ocurrio un error al actualizar el usuario",
+  "US2004": "ocurrio un error al obtener el usuario por el correo",
+  "US2005": "ocurrio un error al obtener el usuario por el id",
+  "AM1201": "el correo no está registrado",
+  "AM1202": "contraseña incorrecta"
+}

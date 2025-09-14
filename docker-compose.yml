@@ -1,0 +1,14 @@
+services:
+  server:
+    environment:
+      - NODE_ENV=production
+    container_name: express
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    ports:
+      - 3000:3000
+    command: >
+      sh -c "npm start"

@@ -1,0 +1,31 @@
+services:
+  inspect_ia_server:
+    environment:
+      - NODE_ENV=local
+    hostname: inspect_ia_server
+    container_name: inspect_ia_server
+    restart: unless-stopped
+    env_file:
+      - src/local.env
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+      target: base
+    ports:
+      - 4000:4000
+    command: >
+      sh -c "npm run dev"
+    volumes:
+      - ./src/src:/app/src
+  mariadb:
+    image: mariadb:11.4.4
+    hostname: inspectiamariadb
+    container_name: inspectiamariadb
+    restart: unless-stopped
+    env_file:
+      - src/local.env
+    volumes:
+      - ./dbdata:/var/lib/mysql
+      - ./dumps:/docker-entrypoint-initdb.d
+    ports:
+      - 3330:3306
