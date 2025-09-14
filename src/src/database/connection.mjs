@@ -1,7 +1,7 @@
 import mariadb from "mariadb";
 import envs from "../config/environments.mjs";
 
-const pool = mariadb.createPool({
+export const pool = mariadb.createPool({
   host: envs.DB_HOST,
   port: envs.DB_PORT,
   user: envs.DB_USER,

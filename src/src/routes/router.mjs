@@ -1,7 +1,6 @@
 import { Router } from "express";
 import authRoutes from "./auth/auth.routes.mjs";
 import scheduleRoutes from "./schedule/schedule.routes.mjs";
-
 class AppRouter {
   constructor() {
     this.router = Router();
