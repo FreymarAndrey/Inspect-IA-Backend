@@ -10,7 +10,11 @@ const stopValidate = (req = request, res = response, next) => {
     return res.status(400).json({
       status: false,
       data: null,
-      error: mapped[keys[0]].msg,
+      error: {
+        code: mapped[keys[0]].msg,
+        message: "Error request",
+        description: "Los datos de la petición son incorrectos",
+      },
     });
   }
   next();
