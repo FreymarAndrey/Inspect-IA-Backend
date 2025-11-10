@@ -1,6 +1,7 @@
 import { Router } from "express";
 import authRoutes from "./auth/auth.routes.mjs";
 import scheduleRoutes from "./schedule/schedule.routes.mjs";
+import evaluationRoutes from "./evaluation/evaluation.routes.mjs";
 class AppRouter {
   constructor() {
     this.router = Router();
@@ -15,6 +16,7 @@ class AppRouter {
     const routes = [
       { path: "/api/v1/auth", route: authRoutes },
       { path: "/api/v1/schedule", route: scheduleRoutes },
+      { path: "/api/v1/evaluation", route: evaluationRoutes },
     ];
 
     routes.forEach((route) => {

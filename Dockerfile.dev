@@ -1,4 +1,4 @@
-FROM node:20.19.5-alpine3.22 AS base
+FROM node:20-bookworm-slim AS base
 
 ENV NODE_ENV=local
 
@@ -6,10 +6,17 @@ WORKDIR /app
 
 COPY src/package*.json .
 
+# Instalar dependencias
+RUN apt-get update && apt-get install -y chromium chromium-sandbox && apt-get clean
+
+# Instalar navegadores para Playwright
+RUN npx playwright install --with-deps chromium
+
+# Definir ruta de Chrome
+ENV CHROME_PATH=/usr/bin/chromium
+
 RUN npm install && npm cache clean --force
 
 COPY src .
 
-FROM base AS local
-
-CMD npm run dev
+CMD ["npm", "run", "dev"]

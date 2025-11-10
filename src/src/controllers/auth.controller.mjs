@@ -34,11 +34,9 @@ class AuthController {
   static register = async (req = request, res = response) => {
     try {
       const { firstname, lastname, phone, company, email, password } = req.body;
-      console.log(email);
 
       const user = await UserModel.findByEmail(email);
 
-      console.log(user);
       if (user)
         throw CustomError.badRequest(
           "UserNotFoundException",
