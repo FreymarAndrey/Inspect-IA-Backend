@@ -4,6 +4,7 @@ import { createServer } from "http";
 import express, { json, urlencoded } from "express";
 import dotenv from "dotenv";
 import { pool } from "../database/connection.mjs";
+import envs from "../config/environments.mjs";
 
 class Server {
   constructor(port, routes) {
@@ -14,6 +15,7 @@ class Server {
     this.routes = routes;
 
     this.app.get("/ping", async (req, res) => {
+      console.log(envs);
       const [rows] = await pool.query("SELECT NOW() AS now");
       res.json(rows);
     });

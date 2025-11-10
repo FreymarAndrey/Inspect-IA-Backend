@@ -8,6 +8,7 @@ export const pool = mariadb.createPool({
   password: envs.DB_PASS,
   database: envs.DB_NAME,
   connectionLimit: 10,
+  ssl: { rejectUnauthorized: false }
 });
 
 export const getDBConnection = async () => {
