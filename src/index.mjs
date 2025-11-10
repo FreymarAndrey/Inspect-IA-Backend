@@ -1,6 +1,6 @@
-import envs from './config/environments.mjs';
-import AppRouter from './routes/router.mjs';
-import Server from './server/server.mjs';
+import envs from './src/config/environments.mjs';
+import AppRouter from './src/routes/router.mjs';
+import Server from './src/server/server.mjs';
 
 (async () => {
   try {
